@@ -21,7 +21,7 @@ const (
 func parseTraining(data string) (int, string, time.Duration, error) {
 	// TODO: реализовать функцию
 	if data == "" {
-		return 0, "", time.Duration(0), errors.New("Пустая строка!")
+		return 0, "", time.Duration(0), errors.New("Тренировка: Пустая строка!")
 	}
 
 	sliceData := strings.Split(data, ",")
@@ -59,9 +59,9 @@ func parseTraining(data string) (int, string, time.Duration, error) {
 func distance(steps int, height float64) float64 {
 	// TODO: реализовать функцию
 	length := height * stepLengthCoefficient
-	distance := (float64(steps) * length) / mInKm
+	stepDistance := (float64(steps) * length) / mInKm
 
-	return distance
+	return stepDistance
 }
 
 func meanSpeed(steps int, height float64, duration time.Duration) float64 {
